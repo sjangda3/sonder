@@ -1,9 +1,18 @@
 "use client";
+import "regenerator-runtime/runtime";
 import Image from "next/image";
 import React, { useState, ChangeEvent } from "react";
 import TextArea from "@/components/inputs/TextArea";
+import SpeechRecognitionComponent from "@/components/SpeachRecognition/SpeachRecognition";
+import { IconVolume } from "@tabler/icons-react";
+
 export default function Home() {
   const [sourceText, setSourceText] = useState<string>("");
+
+  const handleAudioPlayback = (text: string) => {
+    const utterance = new SpeechSynthesisUtterance(text)
+    window.speechSynthesis.speak(utterance);
+  };
   return (
     <div className="min-h-screen">
       <div className="relative flex min-h-screen w-full items-center justify-center bg-white dark:bg-black">
@@ -34,9 +43,12 @@ export default function Home() {
                       />
                       <div className="flex flex-row justify-between w-full">
                         <span className = "cursor-pointer flex space-x-2 flex-row">
-
+                          <SpeechRecognitionComponent 
+                            setSourceText={setSourceText}
+                          />
+                          <IconVolume size={22} onClick={() => handleAudioPlayback(sourceText)}/>
+                            {/* file upload component */}
                         </span>
-
                       </div>
                     </div>
                   </div>
