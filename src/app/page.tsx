@@ -2,7 +2,7 @@
 import "regenerator-runtime/runtime";
 import Image from "next/image";
 import React, { useState, ChangeEvent } from "react";
-import TextArea from "@/components/inputs/TextArea";
+import TextArea from "@/components/Inputs/TextArea";
 import SpeechRecognitionComponent from "@/components/SpeachRecognition/SpeachRecognition";
 import { IconVolume } from "@tabler/icons-react";
 
@@ -25,7 +25,7 @@ export default function Home() {
           <div className="max-w-[85rem] mx-auto px-4 sm:px-6 py-10 sm:py-24"> 
             <div className="text-center mt-50">
               <h1
-                className="text-4xl sm:text-6xl font-bold text-nuetral-200">Son<span className="text-[#bf06e0]">der</span>
+                className="text-4xl sm:text-6xl font-bold text-nuetral-200">Sond<span className="text-[#bf06e0]">erly</span>
                 </h1>
                 <p className="mt-3 text-nuetral-400">
                   Bridging Voices, Connecting Worlds
