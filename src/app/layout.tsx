@@ -24,6 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script src="./assets/vendor/preline/dist/preline.js"></script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
