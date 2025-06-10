@@ -1,7 +1,5 @@
-const svgToDataUri = require("mini-svg-data-uri");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import svgToDataUri from "mini-svg-data-uri";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 const config = {
   plugins: [
@@ -10,12 +8,10 @@ const config = {
       content: [
         './app/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/**/*.{js,ts,jsx,tsx,mdx}',
-        "node_modules/preline/dist/*.js",
+        './src/**/*.{js,ts,jsx,tsx,mdx}'
       ],
       // Custom plugin for background dots
       plugins: [
-        require("preline/plugin"),
         function (api) {
           const { matchUtilities, theme } = api;
           matchUtilities(

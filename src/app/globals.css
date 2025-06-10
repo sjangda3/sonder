@@ -24,3 +24,34 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Hide Next.js badge */
+[href*="create-next-app"],
+[href*="vercel.com/templates"],
+[href*="nextjs.org/docs"] {
+  display: none !important;
+}
+
+/* Animated Gradient Background */
+.gradient-mesh {
+  background: linear-gradient(125deg, #000000, #1a1a1a, #2d1f3d, #1f1f3d);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  position: relative;
+}
+
+.gradient-mesh::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.8 8.544l1.414 1.414 9.9-9.9h-2.77zm22.628 0L53.8 8.828l-1.415 1.415L41.456 0h3.515zM15.8 0L6.2 9.6l1.414 1.414L17.214 0h-1.414zM30.686 0L20.2 10.485l1.414 1.414 10.9-10.9h-1.828zm9.257 0L50.8 10.828l-1.414 1.414L38.457 0h1.486zm-22.2 0L6.2 11.544l1.414 1.414L19.214 0h-1.47zm12.857 0L40 9.5l-1.414 1.414L30.457 0h0zm3.714 0L42.8 8.544l-1.415 1.414L33.457 0h0zm14.257 0L55.8 7.828l-1.414 1.414L45.457 0h0z' fill='%23bf06e0' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

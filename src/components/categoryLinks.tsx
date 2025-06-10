@@ -24,12 +24,13 @@ const CategoryLinks: React.FC = () => {
                 <div 
                   key={label} 
                   className="
-                  m-1 py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg
-                  border border-gray-200 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-event-none bg-neutral=900 text-white
+                  m-1 py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm font-medium rounded-lg
+                  border border-gray-200 shadow-sm hover:bg-gray-800 disabled:opacity-50 disabled:pointer-events-none 
+                  bg-neutral-900 text-white transition-all duration-200 ease-in-out cursor-pointer
                   "
                 >
-                <Icon size={40}/>
-                <p className="text-2xl">{label}</p>
+                <Icon size={24}/>
+                <p className="text-lg">{label}</p>
                 </div>
             ))}
         </div>
