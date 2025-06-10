@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
-
+import React, { useState, ChangeEvent } from "react";
+import TextArea from "@/components/inputs/TextArea";
 export default function Home() {
+  const [sourceText, setSourceText] = useState<string>("");
   return (
     <div className="min-h-screen">
       <div className="relative flex min-h-screen w-full items-center justify-center bg-white dark:bg-black">
@@ -21,8 +24,20 @@ export default function Home() {
                 <div className="mt-7 sm:mt-12 mx-auto max-w-3xl relative">
                   <div className ="gridgap-4 md:grid-cols-4 grid-cols-1">
                     <div className="relative z-10 flex flex-col space-x-3 border rounded-lg shadow-lg bg-nuetral-900 border-nuetral-700 shadow-gray-900/20">
-                      
+                      <TextArea
+                        id='source-language'
+                        value={sourceText}
+                        onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>{
+                          setSourceText(e.target.value);
+                        }}
+                        placeHolder="Source Language"
+                      />
+                      <div className="flex flex-row justify-between w-full">
+                        <span className = "cursor-pointer flex space-x-2 flex-row">
 
+                        </span>
+
+                      </div>
                     </div>
                   </div>
                 </div>
