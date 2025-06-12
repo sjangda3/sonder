@@ -1,6 +1,9 @@
-const nextConfig = {
+import path from 'path';
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // or remove if you've cleaned up errors
   },
   webpack: (config) => {
     config.resolve.alias = {
